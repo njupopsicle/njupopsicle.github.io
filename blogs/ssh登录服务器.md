@@ -39,21 +39,21 @@ scp .ssh/id_rsa.pub a40_username@a40_ip:~/.ssh/id_rsa.pub
 ```
 # 跳板机
 Host jump
-    HostName jumper_ip
+    HostName jumper_public_ip
     User jumper_username
     Port jumper_ssh_port
     IdentityFile "C:\Users\your_username\.ssh\id_rsa"
 
 # 服务器a40
 Host a40
-    HostName 192.168.0.1
+    HostName a40_local_ip
     User a40_username
     IdentityFile "C:\Users\your_username\.ssh\id_rsa"
     ProxyCommand ssh -W %h:%p jump
 
 # 服务器
 Host a800
-    HostName 192.168.0.2
+    HostName a800_local_ip
     User a800_username
     IdentityFile "C:\Users\your_username\.ssh\id_rsa"
     ProxyCommand ssh -W %h:%p jump
