@@ -45,11 +45,22 @@ Host kenv # 给容器起名字
 ssh -R 15980:127.0.0.1:7890 kenv #替换为你设置的名字
 ```
 
+若想在vscode连接时使用端口转发，则在`C:/Users/your_username/.ssh/config`设置
+
+```shell
+Host kenv_clash
+    HostName 172.17.0.3
+    User root
+    ProxyJump a40-2 
+    RemoteForward 15980 127.0.0.1:7890 # 127.0.0.1不要写成localhost
+```
+
 然后在容器内设置代理，就OK了！
 
 ```shell
 export http_proxy=127.0.0.1:15980
 export https_proxy=$http_proxy
+# 取消代理用unset http_proxy && unset https_proxy
 ```
 
 ![image-20231202213704368](assets/image-20231202213704368.png)
