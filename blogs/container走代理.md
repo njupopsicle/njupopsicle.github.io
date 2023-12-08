@@ -7,7 +7,8 @@
 ```shell
 apt update
 apt install openssh-server
-service ssh start
+service ssh start 
+sudo systemctl enable ssh #设置ssh开机自启动
 ```
 
 修改`/etc/ssh/sshd_config`，将`#PermitRootLogin without-password`取消注释，改为`PermitRootLogin yes`，再将`#PasswordAuthentication yes`的注释取消，然后`service ssh restart`重启`ssh`服务.
@@ -20,7 +21,7 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ken
 
 ![image-20231202191451750](assets/image-20231202191451750.png)
 
-这时候可以在服务器上用ssh连接docker容器了.
+这时候可以在服务器上用ssh连接docker容器了. 此外，我们还可以[给容器手动指定ip地址](./container_ip.md).
 
 ![image-20231202210824824](assets/image-20231202210824824.png)
 
