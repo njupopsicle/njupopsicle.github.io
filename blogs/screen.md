@@ -10,7 +10,8 @@ apt install screen
 来安装screen. 使用下面的命令创建并进入一个screen会话
 
 ```shell
-screen -S session_name
+screen -L -U -S session_name
+# 参数解释：-L生成log文件，-U使用UTF-8编码，-S指定会话名称
 ```
 
 在screen会话中执行深度学习脚本
