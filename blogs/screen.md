@@ -20,4 +20,9 @@ screen -L -U -S session_name
 python train.py
 ```
 
-按ctrl+A,ctrl+D退出会话，回到终端. 用命令 `screen -ls`查看现有的screen会话，`screen -r session_name`回到会话.
+按ctrl+A,ctrl+D退出会话，回到终端. 用命令 `screen -ls`查看现有的screen会话，`screen -r session_name`回到会话. 删除会话命令为
+
+```shell
+screen -S session_name -X quit
+```
+

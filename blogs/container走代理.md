@@ -59,8 +59,7 @@ Host kenv_clash
 然后在容器内设置代理，就OK了！
 
 ```shell
-export http_proxy=127.0.0.1:15980
-export https_proxy=$http_proxy
+export http_proxy=127.0.0.1:15980 && export https_proxy=$http_proxy
 # 取消代理用unset http_proxy && unset https_proxy
 ```
 
