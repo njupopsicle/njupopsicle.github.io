@@ -60,8 +60,9 @@ python -m pip install flash-attn --no-build-isolation #这个包只能用清华�
 
 用token登录huggingface（注意，执行时须处于handbook虚拟环境）
 
-```
+```shell
 huggingface-cli login
+git config --global credential.helper.store #用于解决下面的红字报错
 ```
 
 ![image-20231202221530586](assets/image-20231202221530586.png)
@@ -69,3 +70,21 @@ huggingface-cli login
 此时一个可能碰到的问题是连不上去，这是因为今年huggingface被封堵，可通过[配置docker镜像走win主机代理](./container走代理.html)解决.
 
 最后用`apt install git-lfs`安装git-lfs，huggingface的alignment-handbook环境就算配置成功了.
+
+#### 2023.12.21补充
+
+上面登录huggingface的红字报错，可通过`g`解决. 另外记录一下没有root权限时git-lfs的安装方法：
+
+去[这个链接](https://github.com/git-lfs/git-lfs/releases/)找到assets下载安装包，对于Ubuntu，一般是选择linux amd64，amd64也就是x86-64. 假设下载的安装包名为1.tar.gz，用
+
+```shell
+tar -zxvf 1.tar.gz #假设得到的目录叫作git-lfs-3.4.1
+```
+
+cd进`git-lfs-3.4.1`，修改`install.sh`的prefix为当前目录. 比如当前目录为`~/src/git-lfs-3.4.1`，就修改为这个. 然后`. install.sh`执行安装.最后，修改`~/.bashrc`，加入命令
+
+```shell
+export PATH="~/src/git-lfs/bin:$PATH"
+```
+
+后，`source ~/.bashrc`，输入`git lfs install`验证安装.
