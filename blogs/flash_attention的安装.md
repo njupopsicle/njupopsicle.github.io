@@ -46,7 +46,7 @@ $ conda install cuda-nvcc==11.8.89 -c nvidia
 
 #### 第五步：设置环境变量CUDA_HOME
 
-打开`~/.bashrc`，添加语句`export CUDA_HOME = /usr/local/cuda-11.8`，然后`source ~/.bashrc`.
+打开`~/.bashrc`，添加语句`export CUDA_HOME=/usr/local/cuda-11.8`，然后`source ~/.bashrc`.
 
 #### 第六步：安装Flash Attention
 
