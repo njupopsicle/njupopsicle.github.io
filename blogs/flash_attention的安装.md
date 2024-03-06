@@ -48,7 +48,7 @@ $ conda install cuda-nvcc==11.8.89 -c nvidia
 
 打开`~/.bashrc`，添加语句`export CUDA_HOME = /usr/local/cuda-11.8`，然后`source ~/.bashrc`.
 
-#### 第五步：安装Flash Attention
+#### 第六步：安装Flash Attention
 
 ```sh
 $ git clone https://github.com/Dao-AILab/flash-attention
