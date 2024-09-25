@@ -24,10 +24,19 @@ var _hmt = _hmt || [];
 <td id="layout-menu">
 <div class="image-container">
     <img src="./projects/1200px-NJU.svg.png" width="90px" height="112px" alt="NJU">
+    <img src="./projects/ustc_blue.png" width="90px" height="90px" alt="USTC">
 </div>
-<div class="image-container">
-  <img src="./projects/ustc_blue.png" width="90px" height="112px" alt="NJU">
-</div>
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container img {
+  margin: 0;
+}
+
+
 <div class="menu-item"><a href="index.html" class="current">Homepage</a></div>
 <div class="menu-item"><a href="pub.html">Publications</a></div>
 <div class="menu-item"><a href="group.html">Members</a></div>
