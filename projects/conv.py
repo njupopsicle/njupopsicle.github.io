@@ -4,7 +4,7 @@ from pdf2image import convert_from_path
 pdf_path = 'method_en.pdf'
 
 # 设置图像分辨率（DPI越高，图像越清晰）
-dpi = 300
+dpi = 600
 
 # 将PDF文件的每一页转换为高分辨率的PNG图像
 images = convert_from_path(pdf_path, dpi=dpi)
